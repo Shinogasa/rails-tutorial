@@ -26,3 +26,8 @@ Things you may want to cover:
 ## ex
 
 https://qiita.com/Moo_Moo_Farm/items/0d08da27371272ed1390
+
+## test
+
+`bundle exec rspec`
+https://zenn.dev/fu_ga/books/ff025eaf9eb387/viewer/f2c0c9
