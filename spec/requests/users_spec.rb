@@ -6,6 +6,10 @@ RSpec.describe "Users", type: :request do
       get signup_path
       expect(response).to have_http_status(:success)
     end
-  end
 
+    it 'Sign up | Ruby on Rails Tutorial Sample Appが含まれること' do
+      get signup_path
+      expect(response.body).to include full_title('Sign up')
+    end
+  end
 end
