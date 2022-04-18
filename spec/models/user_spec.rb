@@ -23,7 +23,7 @@ RSpec.describe User, type: :model do
   end
 
   it 'emailが255文字以内であること' do
-    user.email = "#{a * 244}@example.com"
+    user.email = "#{'a' * 244}@example.com"
     expect(user).to_not be_valid 
   end
 end
