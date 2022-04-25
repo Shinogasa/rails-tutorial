@@ -82,6 +82,39 @@ RSpec.describe "Users", type: :request do
                                                 password_confirmation: 'bar' } }
         expect(response.body).to include full_title('Edit user')
       end
+
+      it 'The form contains 4 errors.と表示されていること' do
+        patch user_path(user), params: { user: { name: '',
+                                                 email: 'foo@invlid',
+                                                 password: 'foo',
+                                                 password_confirmation: 'bar' } }
+        expect(response.body).to include 'The form contains 4 errors.'
+      end
+    end
+
+    context '有効な値の場合' do
+      before do
+        @name = 'Foo Bar'
+        @email = 'foo@bar.com'
+        patch user_path(user), params: { user: { name: @name,
+                                                 email: @email,
+                                                 password: '',
+                                                 password_confirmation: '' } }
+      end
+
+      it '更新されること' do
+        user.reload
+        expect(user.name).to eq @name
+        expect(user.email).to eq @email
+      end
+
+      it 'Users#showにリダイレクトすること' do
+        expect(response).to redirect_to user
+      end
+   
+      it 'flashが表示されていること' do
+        expect(flash).to be_any
+      end
     end
   end
 end
