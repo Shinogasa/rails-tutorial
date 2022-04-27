@@ -13,6 +13,7 @@ gem 'rspec-rails'
 gem 'factory_bot_rails'
 gem 'capybara', '2.13'
 gem 'bcrypt',         '3.1.12'
+gem 'faker',          '1.7.3'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
