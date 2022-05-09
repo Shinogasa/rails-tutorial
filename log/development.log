@@ -3207,3 +3207,410 @@ Migrating to AddActivationToUsers (20220506055650)
   [1m[36mUser Exists (4.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-99@railstutorial.org"], ["LIMIT", 1]]
   [1m[35mSQL (13.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jeffry Leuschke"], ["email", "example-99@railstutorial.org"], ["created_at", "2022-05-06 06:53:08.075448"], ["updated_at", "2022-05-06 06:53:08.075448"], ["password_digest", "$2a$10$RZ4VRySFAMg/tC9k5.aR/.AOaPX.O2a/lWtrQkoBu4uRfsWFnnDXK"], ["activation_digest", "$2a$10$eV/JjPn8ekpWSaPAagKWSelaD94POR7dlB5aXsuWqeFuQ8/0Vvdve"], ["activated", "t"], ["activated_at", "2022-05-06 06:53:08.011448"]]
   [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/login" for 172.28.0.1 at 2022-05-09 02:46:55 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (291.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_rails_default.html.erb (1241.5ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 1732ms (Views: 1705.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/mailers/user_mailer/account_activation" for 172.28.0.1 at 2022-05-09 02:47:02 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/account_activation"}
+UserMailer#account_activation: processed outbound mail in 0.2ms
+Completed 500 Internal Server Error in 1027ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/user_mailer.rb:8:in `account_activation'
+Started GET "/rails/mailers/user_mailer/account_activation" for 172.28.0.1 at 2022-05-09 02:48:22 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/account_activation"}
+UserMailer#account_activation: processed outbound mail in 0.2ms
+Completed 500 Internal Server Error in 74ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/user_mailer.rb:3:in `account_activation'
+Started GET "/rails/mailers/user_mailer/account_activation" for 172.28.0.1 at 2022-05-09 02:50:05 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/account_activation"}
+UserMailer#account_activation: processed outbound mail in 0.3ms
+Completed 500 Internal Server Error in 3ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/user_mailer.rb:3:in `account_activation'
+Started GET "/rails/mailers/user_mailer/account_activation" for 172.28.0.1 at 2022-05-09 02:50:07 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/account_activation"}
+UserMailer#account_activation: processed outbound mail in 0.3ms
+Completed 500 Internal Server Error in 3ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/user_mailer.rb:3:in `account_activation'
+Started GET "/rails/mailers/user_mailer/" for 172.28.0.1 at 2022-05-09 02:50:23 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer"}
+  Rendering /usr/local/bundle/gems/railties-5.1.6/lib/rails/templates/rails/mailers/mailer.html.erb within layouts/application
+  Rendered /usr/local/bundle/gems/railties-5.1.6/lib/rails/templates/rails/mailers/mailer.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 8ms (Views: 7.0ms)
+
+
+Started GET "/rails/mailers/user_mailer/password_reset" for 172.28.0.1 at 2022-05-09 02:50:26 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/password_reset"}
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (0.3ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (0.2ms)
+UserMailer#password_reset: processed outbound mail in 587.4ms
+  Rendering /usr/local/bundle/gems/railties-5.1.6/lib/rails/templates/rails/mailers/email.html.erb
+  Rendered /usr/local/bundle/gems/railties-5.1.6/lib/rails/templates/rails/mailers/email.html.erb (19.1ms)
+Completed 200 OK in 612ms (Views: 21.9ms)
+
+
+Started GET "/rails/mailers/user_mailer/password_reset?part=text%2Fhtml" for 172.28.0.1 at 2022-05-09 02:50:26 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/password_reset"}
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (0.2ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (0.3ms)
+UserMailer#password_reset: processed outbound mail in 307.6ms
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 320ms (Views: 10.1ms)
+
+
+Started GET "/rails/mailers/user_mailer/account_activation" for 172.28.0.1 at 2022-05-09 02:50:31 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/account_activation"}
+UserMailer#account_activation: processed outbound mail in 0.2ms
+Completed 500 Internal Server Error in 2ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/user_mailer.rb:3:in `account_activation'
+Started GET "/rails/mailers/user_mailer/password_reset" for 172.28.0.1 at 2022-05-09 02:50:41 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/password_reset"}
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (0.4ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (0.2ms)
+UserMailer#password_reset: processed outbound mail in 310.9ms
+  Rendering /usr/local/bundle/gems/railties-5.1.6/lib/rails/templates/rails/mailers/email.html.erb
+  Rendered /usr/local/bundle/gems/railties-5.1.6/lib/rails/templates/rails/mailers/email.html.erb (1.4ms)
+Completed 200 OK in 317ms (Views: 4.3ms)
+
+
+Started GET "/rails/mailers/user_mailer/password_reset?part=text%2Fhtml" for 172.28.0.1 at 2022-05-09 02:50:41 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/password_reset"}
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (0.2ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (0.4ms)
+UserMailer#password_reset: processed outbound mail in 340.9ms
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 344ms (Views: 1.7ms)
+
+
+Started GET "/rails/mailers/user_mailer/password_reset?part=text%2Fplain" for 172.28.0.1 at 2022-05-09 02:50:44 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/plain", "path"=>"user_mailer/password_reset"}
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (0.3ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (0.2ms)
+UserMailer#password_reset: processed outbound mail in 321.7ms
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 327ms (Views: 1.7ms)
+
+
+Started GET "/rails/mailers/user_mailer/password_reset.txt?part=text%2Fhtml" for 172.28.0.1 at 2022-05-09 02:50:48 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::MailersController#preview as TEXT
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/password_reset"}
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (0.3ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (0.3ms)
+UserMailer#password_reset: processed outbound mail in 367.0ms
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 374ms (Views: 3.9ms)
+
+
+Started POST "/login" for 172.28.0.1 at 2022-05-09 02:50:58 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RTscP4UDGUUsaHNhJ2gKjnSvI88FgByPE1r3hwuopM8KGFPElJOFz0JC7957jUbOs7CIiYjioMnjvdK57pDWKQ==", "session"=>{"email"=>"example@railstutorial.org", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "example@railstutorial.org"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 103ms (ActiveRecord: 14.1ms)
+
+
+Started GET "/users" for 172.28.0.1 at 2022-05-09 02:50:58 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [30 times] (3.2ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.9ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.5ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.4ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.4ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.4ms)
+  Rendered collection of users/_user.html.erb [30 times] (6.9ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.2ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.3ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.3ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.1ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.2ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.3ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.9ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.3ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.8ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.4ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.2ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.5ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.3ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.8ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.5ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.3ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.1ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.6ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.3ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.9ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.4ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.5ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.3ms)
+  Rendered users/index.html.erb within layouts/application (756.9ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_rails_default.html.erb (138.1ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 1056ms (Views: 1023.7ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/rails/mailers/user_mailer/password_reset.html" for 172.28.0.1 at 2022-05-09 02:51:04 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/password_reset"}
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (0.2ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (0.2ms)
+UserMailer#password_reset: processed outbound mail in 313.7ms
+  Rendering /usr/local/bundle/gems/railties-5.1.6/lib/rails/templates/rails/mailers/email.html.erb
+  Rendered /usr/local/bundle/gems/railties-5.1.6/lib/rails/templates/rails/mailers/email.html.erb (1.6ms)
+Completed 200 OK in 321ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/mailers/user_mailer/password_reset.html?part=text%2Fhtml" for 172.28.0.1 at 2022-05-09 02:51:05 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/password_reset"}
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (0.3ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (0.2ms)
+UserMailer#password_reset: processed outbound mail in 359.5ms
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 363ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/mailers/user_mailer/account_activation" for 172.28.0.1 at 2022-05-09 02:51:08 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/account_activation"}
+UserMailer#account_activation: processed outbound mail in 0.2ms
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/user_mailer.rb:3:in `account_activation'
+Started GET "/rails/mailers/user_mailer/account_activation" for 172.28.0.1 at 2022-05-09 02:52:20 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/account_activation"}
+UserMailer#account_activation: processed outbound mail in 0.2ms
+Completed 500 Internal Server Error in 1036ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/user_mailer.rb:3:in `account_activation'
+Started GET "/rails/mailers/user_mailer/password_reset" for 172.28.0.1 at 2022-05-09 02:52:32 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/password_reset"}
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (0.2ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (0.2ms)
+UserMailer#password_reset: processed outbound mail in 724.1ms
+  Rendering /usr/local/bundle/gems/railties-5.1.6/lib/rails/templates/rails/mailers/email.html.erb
+  Rendered /usr/local/bundle/gems/railties-5.1.6/lib/rails/templates/rails/mailers/email.html.erb (21.1ms)
+Completed 200 OK in 751ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/mailers/user_mailer/password_reset?part=text%2Fhtml" for 172.28.0.1 at 2022-05-09 02:52:32 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/password_reset"}
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (0.2ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (0.2ms)
+UserMailer#password_reset: processed outbound mail in 352.9ms
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 366ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/mailers/user_mailer/account_activation" for 172.28.0.1 at 2022-05-09 04:59:57 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/account_activation"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (10.1ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.6ms)
+UserMailer#account_activation: processed outbound mail in 587.9ms
+  Rendering /usr/local/bundle/gems/railties-5.1.6/lib/rails/templates/rails/mailers/email.html.erb
+  Rendered /usr/local/bundle/gems/railties-5.1.6/lib/rails/templates/rails/mailers/email.html.erb (19.4ms)
+Completed 200 OK in 1656ms (Views: 22.2ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/rails/mailers/user_mailer/account_activation?part=text%2Fhtml" for 172.28.0.1 at 2022-05-09 04:59:59 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/account_activation"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (0.3ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.4ms)
+UserMailer#account_activation: processed outbound mail in 317.7ms
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 334ms (Views: 10.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/password_reset" for 172.28.0.1 at 2022-05-09 05:00:16 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/password_reset"}
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (0.3ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (0.2ms)
+UserMailer#password_reset: processed outbound mail in 493.9ms
+  Rendering /usr/local/bundle/gems/railties-5.1.6/lib/rails/templates/rails/mailers/email.html.erb
+  Rendered /usr/local/bundle/gems/railties-5.1.6/lib/rails/templates/rails/mailers/email.html.erb (1.4ms)
+Completed 200 OK in 501ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/mailers/user_mailer/password_reset?part=text%2Fhtml" for 172.28.0.1 at 2022-05-09 05:00:16 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/password_reset"}
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (0.2ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (0.2ms)
+UserMailer#password_reset: processed outbound mail in 308.2ms
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 312ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/mailers/user_mailer/password_reset?part=text%2Fplain" for 172.28.0.1 at 2022-05-09 05:00:21 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/plain", "path"=>"user_mailer/password_reset"}
+  Rendering user_mailer/password_reset.html.erb within layouts/mailer
+  Rendered user_mailer/password_reset.html.erb within layouts/mailer (0.2ms)
+  Rendering user_mailer/password_reset.text.erb within layouts/mailer
+  Rendered user_mailer/password_reset.text.erb within layouts/mailer (0.2ms)
+UserMailer#password_reset: processed outbound mail in 353.1ms
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 357ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/mailers/user_mailer/account_activation" for 172.28.0.1 at 2022-05-09 05:48:04 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/account_activation"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (9.6ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.5ms)
+UserMailer#account_activation: processed outbound mail in 580.8ms
+  Rendering /usr/local/bundle/gems/railties-5.1.6/lib/rails/templates/rails/mailers/email.html.erb
+  Rendered /usr/local/bundle/gems/railties-5.1.6/lib/rails/templates/rails/mailers/email.html.erb (19.5ms)
+Completed 200 OK in 1693ms (Views: 22.0ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/rails/mailers/user_mailer/account_activation?part=text%2Fhtml" for 172.28.0.1 at 2022-05-09 05:48:06 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/account_activation"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (0.6ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.4ms)
+UserMailer#account_activation: processed outbound mail in 311.4ms
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 328ms (Views: 9.5ms | ActiveRecord: 2.7ms)
+
+
