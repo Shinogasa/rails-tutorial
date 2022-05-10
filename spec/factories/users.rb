@@ -18,6 +18,15 @@ FactoryBot.define do
     activated_at { Time.now }
   end
 
+  factory :malory, class: User do
+    name { 'MALORY' }
+    email { 'maroly@example.gov' }
+    password { 'password' }
+    password_confirmation { 'password' }
+    activated { false }
+    activated_at { Time.now }
+  end
+
   factory :continuous_users, class: User do
     sequence(:name) { |n| "User #{n}" }
     sequence(:email) { |n| "user-#{n}@example.com" }

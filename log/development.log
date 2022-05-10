@@ -3614,3 +3614,49 @@ UserMailer#account_activation: processed outbound mail in 311.4ms
 Completed 200 OK in 328ms (Views: 9.5ms | ActiveRecord: 2.7ms)
 
 
+Started GET "/users" for 172.28.0.1 at 2022-05-10 02:22:14 +0000
+Cannot render console from 172.28.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of users/_user.html.erb [30 times] (3.2ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.4ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.3ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.1ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.3ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.3ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.8ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.0ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.1ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.4ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.4ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.2ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.2ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.1ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.3ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.3ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.2ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.4ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.3ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.3ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.5ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.7ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.4ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.3ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.5ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.4ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.3ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.6ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.5ms)
+  Rendered collection of users/_user.html.erb [30 times] (2.7ms)
+  Rendered users/index.html.erb within layouts/application (1003.2ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_rails_default.html.erb (1242.9ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 2483ms (Views: 2415.2ms | ActiveRecord: 14.1ms)
+
+
