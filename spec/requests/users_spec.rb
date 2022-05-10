@@ -39,6 +39,13 @@ RSpec.describe "Users", type: :request do
           expect(response.body).to include "<a href=\"#{user_path(user)}\">"
         end
       end
+
+      it 'activateされていないユーザは表示されないこと' do
+        not_activated_user = FactoryBot.create(:malory)
+        log_in user
+        get users_path
+        expect(response.body).to_not include not_activated_user.name
+      end
     end
   end
 
@@ -57,6 +64,10 @@ RSpec.describe "Users", type: :request do
                                     email: 'user@example.com',
                                     password: 'password',
                                     password_confirmation: 'password' } } }
+
+      before do
+        ActionMailer::Base.deliveries.clear
+      end
    
       it '登録されること' do
         expect {
@@ -64,21 +75,42 @@ RSpec.describe "Users", type: :request do
         }.to change(User, :count).by 1
       end
    
-      it 'users/showにリダイレクトされること' do
-        post users_path, params: user_params
-        user = User.last
-        expect(response).to redirect_to user
-      end
+      # it 'users/showにリダイレクトされること' do
+      #   post users_path, params: user_params
+      #   user = User.last
+      #   expect(response).to redirect_to user
+      # end
   
       it 'flashが表示されること' do
         post users_path, params: user_params
         expect(flash).to be_any
       end
 
-      it 'ログイン状態であること' do
+      # it 'ログイン状態であること' do
+      #   post users_path, params: user_params
+      #   expect(logged_in?).to be_truthy
+      # end
+
+      it 'メールが1件存在すること' do
         post users_path, params: user_params
-        expect(logged_in?).to be_truthy
+        expect(ActionMailer::Base.deliveries.size).to eq 1
       end
+ 
+      it '登録時点ではactivateされていないこと' do
+        post users_path, params: user_params
+        expect(User.last).to_not be_activated
+      end
+    end
+  end
+
+  describe 'get /users/{id}' do
+    it '有効化されていないユーザの場合はrootにリダイレクトすること' do
+      user = FactoryBot.create(:user)
+      not_activated_user = FactoryBot.create(:malory)
+   
+      log_in user
+      get user_path(not_activated_user)
+      expect(response).to redirect_to root_path
     end
   end
 
