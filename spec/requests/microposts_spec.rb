@@ -13,7 +13,7 @@ RSpec.describe "Microposts", type: :request do
       expect(response).to redirect_to login_path
     end
   end
-  
+
   describe '#destroy' do
     let(:user) { FactoryBot.create(:archer) }
  
@@ -32,9 +32,9 @@ RSpec.describe "Microposts", type: :request do
         }.to_not change(Micropost, :count)
       end
  
-      it 'ログインページにリダイレクトされること' do
+      it 'ルートにリダイレクトされること' do
         delete micropost_path(@post)
-        expect(response).to redirect_to login_path
+        expect(response).to redirect_to root_url
       end
     end
  
