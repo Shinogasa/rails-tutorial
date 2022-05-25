@@ -18,7 +18,7 @@ RSpec.describe "MicroPosts", type: :system do
       expect(page).to have_selector 'div.pagination'
     end
    
-    context '有効な送信の場合' do
+    # context '有効な送信の場合' do
     #   it '投稿されること' do
     #     expect {
     #       content = 'This micropost really ties the room toghether'
