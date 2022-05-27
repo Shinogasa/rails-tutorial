@@ -20,10 +20,11 @@ RSpec.describe "MicroPosts", type: :system do
    
     # context '有効な送信の場合' do
     #   it '投稿されること' do
-    #     content = 'This micropost really ties the room toghether'
-    #     fill_in 'micropost_content', with: content
-    #     expect{click_on "Post"}.to change ( Micropost, :count ).from(35).to(36)
-   
+    #     expect {
+    #       content = 'This micropost really ties the room toghether'
+    #       fill_in 'micropost_content', with: content
+    #       click_button "Post"
+    #     }.to change(Micropost, :count).by 1   
     #     expect(page).to have_content 'This micropost really ties the room together'
     #   end
     # end
